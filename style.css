@@ -1,0 +1,525 @@
+/* ===================================
+   RESET E CONFIGURAÇÕES GERAIS
+=================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===================================
+   VARIÁVEIS
+=================================== */
+
+:root {
+
+    --verde-escuro: #1b4332;
+    --verde-medio: #2d6a4f;
+    --verde-claro: #95d5b2;
+
+    --branco: #ffffff;
+    --cinza-claro: #f8f9fa;
+    --cinza-texto: #222222;
+
+    --sombra:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+
+    --transicao: 0.3s ease;
+}
+
+/* ===================================
+   ACESSIBILIDADE
+=================================== */
+
+.skip-link {
+
+    position: absolute;
+
+    left: -999px;
+
+    top: 10px;
+
+    background-color: black;
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 6px;
+
+    z-index: 9999;
+}
+
+.skip-link:focus {
+
+    left: 10px;
+}
+
+/* ===================================
+   BODY
+=================================== */
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    background-color: var(--cinza-claro);
+
+    color: var(--cinza-texto);
+
+    line-height: 1.8;
+
+    scroll-behavior: smooth;
+}
+
+/* ===================================
+   CONTAINER
+=================================== */
+
+.container {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+/* ===================================
+   HEADER
+=================================== */
+
+.header {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--verde-escuro),
+            var(--verde-medio)
+        );
+
+    color: var(--branco);
+
+    text-align: center;
+
+    padding: 80px 20px;
+}
+
+.header h1 {
+
+    font-size: 3rem;
+
+    margin-bottom: 15px;
+
+    font-weight: 700;
+}
+
+.subtitle {
+
+    font-size: 1.2rem;
+
+    opacity: 0.95;
+
+    max-width: 700px;
+
+    margin: auto;
+}
+
+/* ===================================
+   MENU
+=================================== */
+
+.navbar {
+
+    background-color: var(--verde-escuro);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: var(--sombra);
+}
+
+.nav-list {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    list-style: none;
+
+    padding: 18px;
+}
+
+.nav-list a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 500;
+
+    transition: var(--transicao);
+
+    position: relative;
+}
+
+/* Linha animada */
+
+.nav-list a::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+
+    height: 2px;
+
+    left: 0;
+
+    bottom: -5px;
+
+    background-color: var(--verde-claro);
+
+    transition: var(--transicao);
+}
+
+.nav-list a:hover::after,
+.nav-list a:focus::after {
+
+    width: 100%;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+
+    color: var(--verde-claro);
+}
+
+/* ===================================
+   HERO
+=================================== */
+
+.hero {
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1600&auto=format&fit=crop");
+
+    background-position: center;
+
+    background-size: cover;
+
+    background-repeat: no-repeat;
+
+    min-height: 90vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+}
+
+.hero-overlay {
+
+    background:
+        rgba(0, 0, 0, 0.50);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 50px;
+
+    border-radius: 16px;
+
+    width: 90%;
+
+    max-width: 750px;
+
+    backdrop-filter: blur(4px);
+
+    animation: fadeIn 1.2s ease;
+}
+
+.hero-overlay h2 {
+
+    font-size: 2.7rem;
+
+    margin-bottom: 20px;
+}
+
+.hero-overlay p {
+
+    font-size: 1.1rem;
+
+    margin-bottom: 30px;
+}
+
+/* ===================================
+   BOTÃO
+=================================== */
+
+.btn {
+
+    display: inline-block;
+
+    background-color: var(--verde-medio);
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 14px 30px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    transition: var(--transicao);
+
+    box-shadow: var(--sombra);
+}
+
+.btn:hover,
+.btn:focus {
+
+    background-color: var(--verde-escuro);
+
+    transform: translateY(-3px);
+}
+
+/* ===================================
+   SEÇÕES
+=================================== */
+
+.section {
+
+    padding: 90px 20px;
+
+    text-align: center;
+}
+
+.section h2 {
+
+    color: var(--verde-escuro);
+
+    margin-bottom: 30px;
+
+    font-size: 2.3rem;
+
+    position: relative;
+}
+
+/* Linha decorativa */
+
+.section h2::after {
+
+    content: "";
+
+    width: 90px;
+
+    height: 4px;
+
+    background-color: var(--verde-medio);
+
+    display: block;
+
+    margin: 12px auto 0;
+
+    border-radius: 10px;
+}
+
+.section p {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    font-size: 1.05rem;
+}
+
+/* ===================================
+   SEÇÃO VERDE
+=================================== */
+
+.green-section {
+
+    background-color: #e9f5ec;
+}
+
+/* ===================================
+   CARDS
+=================================== */
+
+.cards {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 30px;
+
+    margin-top: 50px;
+}
+
+.card {
+
+    background-color: white;
+
+    width: 320px;
+
+    padding: 35px 28px;
+
+    border-radius: 15px;
+
+    box-shadow: var(--sombra);
+
+    transition: var(--transicao);
+}
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+
+    color: var(--verde-medio);
+
+    margin-bottom: 18px;
+
+    font-size: 1.3rem;
+}
+
+.card p {
+
+    font-size: 1rem;
+}
+
+/* ===================================
+   SEÇÃO ESCURA
+=================================== */
+
+.dark-section {
+
+    background-color: var(--verde-escuro);
+
+    color: white;
+}
+
+.dark-section h2 {
+
+    color: white;
+}
+
+.dark-section h2::after {
+
+    background-color: var(--verde-claro);
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+
+.footer {
+
+    background-color: #10251c;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 20px;
+}
+
+.footer p {
+
+    margin-bottom: 10px;
+}
+
+/* ===================================
+   ANIMAÇÃO
+=================================== */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+/* ===================================
+   RESPONSIVIDADE
+=================================== */
+
+@media (max-width: 768px) {
+
+    .header h1 {
+
+        font-size: 2rem;
+    }
+
+    .hero-overlay {
+
+        padding: 35px 25px;
+    }
+
+    .hero-overlay h2 {
+
+        font-size: 1.9rem;
+    }
+
+    .nav-list {
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .cards {
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .section {
+
+        padding: 70px 20px;
+    }
+
+    .section h2 {
+
+        font-size: 1.8rem;
+    }
+}
